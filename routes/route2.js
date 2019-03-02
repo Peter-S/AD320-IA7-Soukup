@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var colorfile = require('../public/color.json');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('route2');
+
+router.get('/:color', function(req, res) {
+  var file =  colorfile;
+  res.json(file);
+
 });
 
 module.exports = router;
