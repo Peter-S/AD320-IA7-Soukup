@@ -13,10 +13,6 @@ var colNone = colorfile.colors[6];
 router.get('/:color', function(req, res, next) {
   var mine = getColor(req.params.color);
   res.json(mine)
-  //var input = {color: req.params.color};
-  //res.json(input)
-  //if(input == 'black') {
-  //res.json(ColBlack)};
 });
 
 function getColor(col) {
@@ -50,7 +46,6 @@ function getColor(col) {
   {
     test = colNone;
   }
-
   return test;
 }
 
