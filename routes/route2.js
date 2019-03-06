@@ -17,36 +17,42 @@ router.get('/:color', function(req, res, next) {
 
 function getColor(col) {
   var input = col;
-  var test;
-  if(input == 'black') 
-  {
-    test = colBlack;
+  var test = input.toLowerCase();
+
+  for(var i = 0; i < colorfile.colors.length; i++) {
+    if(colorfile.colors[i].color === test) {
+      return colorfile.colors[i];
+    }
   }
-  else if(input == 'white') 
-  {
-    test = colWhite;
-  }
-  else if(input == 'red') 
-  {
-    test = colRed;
-  }
-  else if(input == 'blue') 
-  {
-    test = colBlue;
-  }
-  else if(input == 'yellow') 
-  {
-    test = colYellow;
-  }
-  else if(input == 'green') 
-  {
-    test = colGreen;
-  }
-  else 
-  {
-    test = colNone;
-  }
-  return test;
+  // if(input == 'black') 
+  // {
+  //   test = colBlack;
+  // }
+  // else if(input == 'white') 
+  // {
+  //   test = colWhite;
+  // }
+  // else if(input == 'red') 
+  // {
+  //   test = colRed;
+  // }
+  // else if(input == 'blue') 
+  // {
+  //   test = colBlue;
+  // }
+  // else if(input == 'yellow') 
+  // {
+  //   test = colYellow;
+  // }
+  // else if(input == 'green') 
+  // {
+  //   test = colGreen;
+  // }
+  // else 
+  // {
+  //   test = colNone;
+  // }
+  // return test;
 }
 
 module.exports = router;
